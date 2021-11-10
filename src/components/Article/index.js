@@ -18,7 +18,7 @@ export const Article = (article) => {
 
     return (
         <ArticleBox tabindex="1">
-            <ArticleIMG src="https://via.placeholder.com/500X300/"/>
+            <ArticleIMG src="https://via.placeholder.com/100.png"/>
             <ArticleTitle>{articleFields.title}</ArticleTitle>
             <ArticleCategory>{articleFields.category}</ArticleCategory>          
         </ArticleBox>
@@ -32,29 +32,30 @@ export const Article = (article) => {
 
 const ArticleBox = styled.button`
     position: relative;
-    flex: 0 0 40%;
+    flex: 0 0 48%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
     background:white;
     margin: 5px;
-    height: 500px;
+    height: 400px;
     cursor: pointer;
 `;
 
 const ArticleIMG = styled.img`
-    width: 100%
+    flex: 0 0 50%;
+    margin: 0 0 15px 0;
 `;
 
-const ArticleTitle = styled.h3`   
+const ArticleTitle = styled.h3`  
+    
 `
 
 const ArticleCategory = styled.div`
     position: absolute;
-    bottom: 0;
-    color: silver;
-    font-size: medium;
+    bottom: 10px;
+    font-size: small;
 `;
 
 export default Article;

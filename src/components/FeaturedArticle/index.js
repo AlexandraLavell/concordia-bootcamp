@@ -4,7 +4,15 @@
 import React from "react";
 
 
-const FeaturedArticle = () => {
+const FeaturedArticle = (articles) => {
+
+    const featuredArticle = articles.articles.filter((item) => {
+        return item.fields.featured;
+    })
+
+    
+
+    // console.log(featuredArticle.fields(date).sort((a,b) => b[1] - a[1]));
 
     return (
 

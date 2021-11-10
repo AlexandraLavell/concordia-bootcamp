@@ -25,9 +25,8 @@ function App() {
 
         {/* TODO: Blog things goes here. Use the components folder! */}
         <Container>
-          <h1>Hello 🌎</h1>
           {/* featured article container */}
-          <FeaturedArticle />
+          <FeaturedArticle articles={articles}/>
           <ArticleList articles={articles} />
         </Container>
 
