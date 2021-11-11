@@ -15,7 +15,9 @@ function App() {
   // console.log("TODO: use the store to create the base UI", store);
 
   //consume content object with a key/value "articles"
-  const { articles } = store;
+  const { articles, getFeaturedArticle } = store;
+
+  // console.log(store);
 
   return (
     <>
@@ -26,7 +28,7 @@ function App() {
         {/* TODO: Blog things goes here. Use the components folder! */}
         <Container>
           {/* featured article container */}
-          <FeaturedArticle articles={articles}/>
+          <FeaturedArticle getFeaturedArticle={getFeaturedArticle}/>
           <ArticleList articles={articles} />
         </Container>
 
