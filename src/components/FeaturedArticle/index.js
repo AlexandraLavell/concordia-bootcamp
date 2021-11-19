@@ -12,9 +12,6 @@ const FeaturedArticle = ({getFeaturedArticle}) => {
     //get the featured article
     const featured=getFeaturedArticle();
 
-    //update featured article state variable
-    
-
 
     return (
         <FeatureBox>
@@ -37,7 +34,8 @@ const FeatureBox = styled.div`
     margin: 5px;
     height: 600px;
     width: 100%;
-    /* height: fit-content; */
+    height: fit-content;
+    /* background: yellow; */
 `;
 
 const FeatureIMG = styled.img`
