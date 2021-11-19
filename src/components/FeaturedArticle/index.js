@@ -6,18 +6,23 @@ import React from "react";
 import styled from 'styled-components';
 
 
-
+//getFeatured is a function from the store context passed to this component from App
 const FeaturedArticle = ({getFeaturedArticle}) => {
 
-    const article = getFeaturedArticle();
-    console.log(article);
+    //get the featured article
+    const featured=getFeaturedArticle();
+
+    //update featured article state variable
+    
+
 
     return (
         <FeatureBox>
-        <FeatureIMG src="https://via.placeholder.com/100.png"/>
-        <FeatureTitle>{article.fields.title}</FeatureTitle>
-        <FeatureCategory>{article.fields.category}</FeatureCategory>          
-    </FeatureBox>
+            <FeatureIMG src="https://via.placeholder.com/100.png"/>
+            {/* wait for featured to be available before rendering the featured article */}
+            {featured && <FeatureTitle>{featured.fields.title}</FeatureTitle>}
+            <FeatureCategory>{featured.fields.category}</FeatureCategory>          
+        </FeatureBox>
     )
 }
 
@@ -27,7 +32,7 @@ const FeatureBox = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: space-between;
     background:white;
     margin: 5px;
     height: 600px;
@@ -45,8 +50,6 @@ const FeatureTitle = styled.h3`
 `
 
 const FeatureCategory = styled.div`
-    position: absolute;
-    bottom: 10px;
     font-size: small;
 `;
 

@@ -17,8 +17,6 @@ function App() {
   //consume content object with a key/value "articles"
   const { articles, getFeaturedArticle } = store;
 
-  // console.log(store);
-
   return (
     <>
       <GlobalStyle />
@@ -27,7 +25,7 @@ function App() {
 
         {/* TODO: Blog things goes here. Use the components folder! */}
         <Container>
-          {/* featured article container */}
+          {/* featured article container send the state variable featured article */}
           <FeaturedArticle getFeaturedArticle={getFeaturedArticle}/>
           <ArticleList articles={articles} />
         </Container>
