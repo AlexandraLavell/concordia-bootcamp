@@ -8,41 +8,26 @@ import styled from "styled-components";
 //import componenets
 import Article from "../Article";
 
-export const ArticleList = (articles) => {
+export const ArticleList = ({articles, featuredArticle}) => {
+
+    if (featuredArticle){console.log("AVAILABLE")};
+
 
     //state variable for pagination
-    const [page, setPage] = useState(articles.articles.slice(0,6));
-    const [pageNumber, setPageNumber] = useState(1);
-
-    // console.log(page);
-    //
-
-
-    // const loadMore = () => {
-
-    //     setPage([...page, articles.articles.slice((pageNumber*6, pageNumber*6+6))])
-
-    //     setPageNumber(pageNumber + 1);
-
-    // }
+    const [page, setPage] = useState(articles.slice(0,6));
+    const [pageNumber, setPageNumber] = useState(1);    
 
     return (
         <ListWrapper>
             {/* populate the list */}
-            {articles.articles.map((item) =>{
-                return (                    
-                <Article key={Math.floor(Math.random()*42000000)} article={item}/>                     )
+            {articles.map((item) =>{
+                return (               
+                    <Article key={Math.floor(Math.random()*42000000)} article={item}/> 
+                )
             })}      
             <LoadMoreButton>Load more</LoadMoreButton>           
         </ListWrapper>
-
-
-
     )
-
-
-
-
 
 }
 

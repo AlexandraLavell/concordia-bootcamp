@@ -16,6 +16,12 @@ export const StoreProvider = ({ children }) => {
     }());
   }, []);
 
+  useEffect(() => {
+    (async function fetchFeatured() {
+      setFeaturedArticle(await getFeatured());
+    }());
+  }, [articles]);
+
 
   // TODO: Update the method below to return the latest featured article from the list of articles
   

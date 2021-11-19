@@ -15,7 +15,7 @@ function App() {
   // console.log("TODO: use the store to create the base UI", store);
 
   //consume content object with a key/value "articles"
-  const { articles, getFeaturedArticle } = store;
+  const { articles, getFeaturedArticle, featuredArticle } = store;
 
   return (
     <>
@@ -26,8 +26,8 @@ function App() {
         {/* TODO: Blog things goes here. Use the components folder! */}
         <Container>
           {/* featured article container send the state variable featured article */}
-          <FeaturedArticle getFeaturedArticle={getFeaturedArticle}/>
-          <ArticleList articles={articles} />
+          <FeaturedArticle getFeaturedArticle={getFeaturedArticle} featuredArticle={featuredArticle} />
+          <ArticleList articles={articles} featuredArticle={featuredArticle} />
         </Container>
 
         <Footer />
