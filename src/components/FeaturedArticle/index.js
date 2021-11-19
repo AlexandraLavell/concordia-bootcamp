@@ -21,7 +21,7 @@ const FeaturedArticle = ({getFeaturedArticle}) => {
             <FeatureIMG src="https://via.placeholder.com/100.png"/>
             {/* wait for featured to be available before rendering the featured article */}
             {featured && <FeatureTitle>{featured.fields.title}</FeatureTitle>}
-            <FeatureCategory>{featured.fields.category}</FeatureCategory>          
+            {featured && <FeatureCategory>{featured.fields.category}</FeatureCategory>}         
         </FeatureBox>
     )
 }
